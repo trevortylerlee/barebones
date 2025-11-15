@@ -8,11 +8,13 @@ export async function GET(context) {
     title: SITE.title,
     description: SITE.description,
     site: context.site,
-    items: blog.map((post) => ({
-      title: post.data.title,
-      description: post.data.description,
-      pubDate: post.data.publicationDate,
-      link: `/blog/${post.id}`,
-    })),
+    items: blog
+      .sort((a, b) => b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf())
+      .map((post) => ({
+        title: post.data.title,
+        description: post.data.description,
+        pubDate: post.data.publicationDate,
+        link: `/blog/${post.id}`,
+      })),
   });
 }
