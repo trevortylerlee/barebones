@@ -1,5 +1,6 @@
 /** @type {import("prettier").Config} */
 export default {
+  astroCompressHTML: true,
   plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   overrides: [
     {

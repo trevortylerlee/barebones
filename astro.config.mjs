@@ -5,12 +5,31 @@ import siteConfigToolbar from "./site-config-toolbar/integration.ts";
 
 // https://astro.build/config
 export default defineConfig({
+  compressHTML: true,
   integrations: [sitemap(), siteConfigToolbar()],
   fonts: [
     {
-      provider: fontProviders.fontsource(),
+      provider: fontProviders.local(),
       name: "Geist",
       cssVariable: "--font-geist",
+      options: {
+        variants: [
+          {
+            weight: "100 900",
+            style: "normal",
+            src: [
+              "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2",
+            ],
+          },
+          {
+            weight: "100 900",
+            style: "italic",
+            src: [
+              "@fontsource-variable/geist/files/geist-latin-wght-italic.woff2",
+            ],
+          },
+        ],
+      },
     },
   ],
   markdown: {

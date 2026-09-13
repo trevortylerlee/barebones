@@ -72,7 +72,7 @@ export const SITE: SiteConfiguration = {
 
 2. Customize the links shown in the navigation bar.
 
-```ts"
+```ts
 export const NAV_LINKS: NavigationLinks = {
   about: {
     path: "/about",
