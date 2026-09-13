@@ -24,7 +24,7 @@ const ogImage = new URL("./og.jpg", base);
 <meta
   property="og:image"
   content={entry?.data?.image?.src
-    ? `${base}${entry.data.image.src}`
+    ? new URL(entry.data.image.src, base)
     : ogImage}
 />
 <meta property="og:image:alt" content={postTitle} />
@@ -34,9 +34,9 @@ const ogImage = new URL("./og.jpg", base);
 <meta name="twitter:title" content={postTitle} />
 <meta name="twitter:description" content={postDescription} />
 <meta
-  property="twitter:image"
+  name="twitter:image"
   content={entry?.data?.image?.src
-    ? `${base}${entry.data.image.src}`
+    ? new URL(entry.data.image.src, base)
     : ogImage}
 />
 <meta name="twitter:image:alt" content={postTitle} />

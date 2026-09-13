@@ -33,7 +33,7 @@ import Favicons from "@/components/Favicons.astro";
     rel="alternate"
     type="application/rss+xml"
     title={SITE.title}
-    href={new URL("rss.xml", SITE.href || Astro.url.origin)}
+    href={new URL("/rss.xml", SITE.href || Astro.url.origin)}
   />
   <Favicons />
   <Font cssVariable="--font-geist" preload />
